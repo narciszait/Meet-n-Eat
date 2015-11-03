@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8E2615B4D9538A82B10CEC37E2390B9D7D3BA194",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8E2615B4D9538A82B10CEC37E2390B9D7D3BA194" : 0,
+    "81FDDFF719A4A25D2DFF2BF8881DA9686C7906A4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D2CA78E3-2A47-4FFF-8364-19588FC27228",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8E2615B4D9538A82B10CEC37E2390B9D7D3BA194" : "Meet%20'n'%20Eat\/",
+    "81FDDFF719A4A25D2DFF2BF8881DA9686C7906A4" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Meet 'n' Eat",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Meet 'n' Eat.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:narciszait\/NSCoders.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "81FDDFF719A4A25D2DFF2BF8881DA9686C7906A4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/narciszait\/Meet-n-Eat.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8E2615B4D9538A82B10CEC37E2390B9D7D3BA194"
+    }
+  ]
+}

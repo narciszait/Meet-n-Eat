@@ -28,6 +28,8 @@
 		EC1B14261BE27906006182FC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14231BE27906006182FC /* FBSDKShareKit.framework */; };
 		EC666AC51BDEED5C001857CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC666AC41BDEED5C001857CD /* User.swift */; };
 		ECCE4F191BE9310300D24B9F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCE4F181BE9310300D24B9F /* ParseUI.framework */; };
+		ECCE4F1B1BE93DAA00D24B9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4F1A1BE93DAA00D24B9F /* LoginViewController.swift */; };
+		ECCE4F1E1BE94E2700D24B9F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4F1D1BE94E2700D24B9F /* SignUpViewController.swift */; };
 		ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF118DF1BDEC1440035427C /* AppDelegate.swift */; };
 		ECF118E21BDEC1440035427C /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF118E11BDEC1440035427C /* FBLoginViewController.swift */; };
 		ECF118E51BDEC1440035427C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF118E31BDEC1440035427C /* Main.storyboard */; };
@@ -59,6 +61,9 @@
 		EC530AA61BDEC25600D16124 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		EC666AC41BDEED5C001857CD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ECCE4F181BE9310300D24B9F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		ECCE4F1A1BE93DAA00D24B9F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ECCE4F1C1BE9420F00D24B9F /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		ECCE4F1D1BE94E2700D24B9F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ECF118DC1BDEC1440035427C /* Meet 'n' Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meet 'n' Eat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF118DF1BDEC1440035427C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF118E11BDEC1440035427C /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 				ECF118E81BDEC1440035427C /* LaunchScreen.storyboard */,
 				ECF118EB1BDEC1440035427C /* Info.plist */,
 				EC530AA61BDEC25600D16124 /* Bridge.h */,
+				ECCE4F1C1BE9420F00D24B9F /* Pacifico.ttf */,
 			);
 			name = "Support files";
 			sourceTree = "<group>";
@@ -160,6 +166,8 @@
 			children = (
 				ECF118DF1BDEC1440035427C /* AppDelegate.swift */,
 				ECF118E11BDEC1440035427C /* FBLoginViewController.swift */,
+				ECCE4F1A1BE93DAA00D24B9F /* LoginViewController.swift */,
+				ECCE4F1D1BE94E2700D24B9F /* SignUpViewController.swift */,
 				ECF118E31BDEC1440035427C /* Main.storyboard */,
 				ECF3BEB61BDEC94700B8B263 /* SuccessViewController.swift */,
 				EC666AC41BDEED5C001857CD /* User.swift */,
@@ -239,9 +247,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECCE4F1E1BE94E2700D24B9F /* SignUpViewController.swift in Sources */,
 				EC666AC51BDEED5C001857CD /* User.swift in Sources */,
 				ECF118E21BDEC1440035427C /* FBLoginViewController.swift in Sources */,
 				ECF3BEB71BDEC94700B8B263 /* SuccessViewController.swift in Sources */,
+				ECCE4F1B1BE93DAA00D24B9F /* LoginViewController.swift in Sources */,
 				ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

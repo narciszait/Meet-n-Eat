@@ -14,7 +14,7 @@ import Parse
 import ParseFacebookUtilsV4
 import ParseUI
 
-class SuccessViewController: UIViewController, PFLogInViewControllerDelegategi {
+class SuccessViewController: UIViewController {
     
     @IBOutlet weak var facebookName: UILabel!;
     @IBOutlet weak var facebookSex: UILabel!;

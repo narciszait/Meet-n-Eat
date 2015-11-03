@@ -24,16 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true);
         
-        if defaults.valueForKey("FBLoggedIn") != nil {
-            print("FBLoggedIn exists");
-            let storyboard = UIStoryboard(name: "Main", bundle: nil);
-            self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("Success") as? SuccessViewController
-        }
+//        if defaults.valueForKey("FBLoggedIn") != nil {
+//            print("FBLoggedIn exists");
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+//            self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("Success") as? SuccessViewController
+//        }
 
-        let isFacebookAuthorized = application.canOpenURL(NSURL(fileURLWithPath: "fbauth://authorize"));
+       // let isFacebookAuthorized = application.canOpenURL(NSURL(fileURLWithPath: "fbauth://authorize"));
         Parse.setApplicationId("gTcnz8TitnGTLPRhEmKc9LdLNucARollwYNmFqXw", clientKey: "96obICPl32RPIc5LJJcEkBySpTup6mT87BzvVlt6");
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions);
+        application.statusBarStyle = .LightContent;
 
         return true // FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions) //
     }
