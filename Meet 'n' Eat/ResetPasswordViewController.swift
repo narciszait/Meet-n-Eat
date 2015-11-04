@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SuccessViewController.swift
 //  Meet 'n' Eat
 //
 //  Created by Narcis Zait on 26/10/15.
@@ -14,10 +14,10 @@ import Parse
 import ParseFacebookUtilsV4
 import ParseUI
 
-class LoginViewController: UIViewController {
+class ResetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
-        super.viewDidLoad();
+        super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     /*
     // MARK: - Navigation

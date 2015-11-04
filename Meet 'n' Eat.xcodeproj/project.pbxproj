@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0D0D481BEA3BE4000A9E08 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECCE4F1C1BE9420F00D24B9F /* Pacifico.ttf */; };
+		EC0D0D4C1BEA687C000A9E08 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0D0D4B1BEA687C000A9E08 /* SignUpViewController.swift */; };
 		EC1B14021BE266EE006182FC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14011BE266EE006182FC /* Accounts.framework */; };
 		EC1B14041BE266F5006182FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14031BE266F5006182FC /* AudioToolbox.framework */; };
 		EC1B14061BE26701006182FC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14051BE26701006182FC /* CFNetwork.framework */; };
@@ -26,19 +28,18 @@
 		EC1B14241BE27906006182FC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14211BE27906006182FC /* FBSDKCoreKit.framework */; };
 		EC1B14251BE27906006182FC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14221BE27906006182FC /* FBSDKLoginKit.framework */; };
 		EC1B14261BE27906006182FC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14231BE27906006182FC /* FBSDKShareKit.framework */; };
-		EC666AC51BDEED5C001857CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC666AC41BDEED5C001857CD /* User.swift */; };
 		ECCE4F191BE9310300D24B9F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCE4F181BE9310300D24B9F /* ParseUI.framework */; };
-		ECCE4F1B1BE93DAA00D24B9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4F1A1BE93DAA00D24B9F /* LoginViewController.swift */; };
-		ECCE4F1E1BE94E2700D24B9F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4F1D1BE94E2700D24B9F /* SignUpViewController.swift */; };
+		ECCE4F1E1BE94E2700D24B9F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4F1D1BE94E2700D24B9F /* HomeViewController.swift */; };
 		ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF118DF1BDEC1440035427C /* AppDelegate.swift */; };
-		ECF118E21BDEC1440035427C /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF118E11BDEC1440035427C /* FBLoginViewController.swift */; };
+		ECF118E21BDEC1440035427C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF118E11BDEC1440035427C /* LoginViewController.swift */; };
 		ECF118E51BDEC1440035427C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF118E31BDEC1440035427C /* Main.storyboard */; };
 		ECF118E71BDEC1440035427C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF118E61BDEC1440035427C /* Assets.xcassets */; };
 		ECF118EA1BDEC1440035427C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF118E81BDEC1440035427C /* LaunchScreen.storyboard */; };
-		ECF3BEB71BDEC94700B8B263 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3BEB61BDEC94700B8B263 /* SuccessViewController.swift */; };
+		ECF3BEB71BDEC94700B8B263 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC0D0D4B1BEA687C000A9E08 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EC1B14011BE266EE006182FC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		EC1B14031BE266F5006182FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EC1B14051BE26701006182FC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -59,19 +60,17 @@
 		EC1B14221BE27906006182FC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		EC1B14231BE27906006182FC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		EC530AA61BDEC25600D16124 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
-		EC666AC41BDEED5C001857CD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ECCE4F181BE9310300D24B9F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		ECCE4F1A1BE93DAA00D24B9F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ECCE4F1C1BE9420F00D24B9F /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
-		ECCE4F1D1BE94E2700D24B9F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		ECCE4F1D1BE94E2700D24B9F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECF118DC1BDEC1440035427C /* Meet 'n' Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meet 'n' Eat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF118DF1BDEC1440035427C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECF118E11BDEC1440035427C /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
+		ECF118E11BDEC1440035427C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ECF118E41BDEC1440035427C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECF118E61BDEC1440035427C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECF118E91BDEC1440035427C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECF118EB1BDEC1440035427C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECF3BEB61BDEC94700B8B263 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,12 +164,11 @@
 			isa = PBXGroup;
 			children = (
 				ECF118DF1BDEC1440035427C /* AppDelegate.swift */,
-				ECF118E11BDEC1440035427C /* FBLoginViewController.swift */,
-				ECCE4F1A1BE93DAA00D24B9F /* LoginViewController.swift */,
-				ECCE4F1D1BE94E2700D24B9F /* SignUpViewController.swift */,
+				ECF118E11BDEC1440035427C /* LoginViewController.swift */,
+				ECCE4F1D1BE94E2700D24B9F /* HomeViewController.swift */,
+				EC0D0D4B1BEA687C000A9E08 /* SignUpViewController.swift */,
+				ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */,
 				ECF118E31BDEC1440035427C /* Main.storyboard */,
-				ECF3BEB61BDEC94700B8B263 /* SuccessViewController.swift */,
-				EC666AC41BDEED5C001857CD /* User.swift */,
 				ECD1136C1BDEC16700C265C8 /* Support files */,
 			);
 			path = "Meet 'n' Eat";
@@ -234,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0D0D481BEA3BE4000A9E08 /* Pacifico.ttf in Resources */,
 				ECF118EA1BDEC1440035427C /* LaunchScreen.storyboard in Resources */,
 				ECF118E71BDEC1440035427C /* Assets.xcassets in Resources */,
 				ECF118E51BDEC1440035427C /* Main.storyboard in Resources */,
@@ -247,11 +246,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECCE4F1E1BE94E2700D24B9F /* SignUpViewController.swift in Sources */,
-				EC666AC51BDEED5C001857CD /* User.swift in Sources */,
-				ECF118E21BDEC1440035427C /* FBLoginViewController.swift in Sources */,
-				ECF3BEB71BDEC94700B8B263 /* SuccessViewController.swift in Sources */,
-				ECCE4F1B1BE93DAA00D24B9F /* LoginViewController.swift in Sources */,
+				ECCE4F1E1BE94E2700D24B9F /* HomeViewController.swift in Sources */,
+				EC0D0D4C1BEA687C000A9E08 /* SignUpViewController.swift in Sources */,
+				ECF118E21BDEC1440035427C /* LoginViewController.swift in Sources */,
+				ECF3BEB71BDEC94700B8B263 /* ResetPasswordViewController.swift in Sources */,
 				ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

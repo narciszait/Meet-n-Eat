@@ -15,90 +15,46 @@ import Parse
 import ParseFacebookUtilsV4
 import ParseUI
 
-class LoginViewController : PFLogInViewController {
+class LoginViewController: UIViewController {
     
-    var backgroundImage : UIImageView!;
-    var viewsToAnimate: [UIView!]!;
-    var viewsFinalYPosition: [CGFloat]!;
+    
+    @IBOutlet weak var fbLoginButton: UIButton!;
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        
-        // set our custom background image
-        backgroundImage = UIImageView(image: UIImage(named: "welcome_5"));
-        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill;
-        self.logInView!.insertSubview(backgroundImage, atIndex: 0);
-        
-        //custom Logo
-        let logo = UILabel();
-        logo.text = "Meet 'n' Eat";
-        logo.textColor = UIColor.whiteColor();
-        logo.font = UIFont(name: "Pacifico", size: 70);
-        logo.shadowColor = UIColor.lightGrayColor();
-        logo.shadowOffset = CGSizeMake(2, 2);
-        logInView?.logo = logo;
-        
-        //Login Button changind color
-        logInView?.logInButton?.setBackgroundImage(nil, forState: .Normal);
-        logInView?.logInButton?.backgroundColor = UIColor(red: 52 / 255, green: 191 / 255, blue: 73 / 255, alpha: 1.0)
-        
-        //Forgot password button
-        logInView?.passwordForgottenButton?.setTitleColor(UIColor.whiteColor(), forState: .Normal);
-        logInView?.passwordForgottenButton?.backgroundColor = UIColor(red: 52 / 255, green: 191 / 255, blue: 73 / 255, alpha: 1.0)
-        
-        //Facebook, signup buttons recoloring
-        customizeButton(logInView?.facebookButton!);
-        customizeButton(logInView?.signUpButton!);
-        customizeButton(logInView?.passwordForgottenButton!);
-        
-        //animation
-        viewsToAnimate = [self.logInView?.usernameField, self.logInView?.passwordField, self.logInView?.logInButton, self.logInView?.passwordForgottenButton, self.logInView?.facebookButton, self.logInView?.signUpButton, self.logInView?.logo];
-        
-        //custom SignUpViewController
-        self.signUpController = SignUpViewController()
-//        self.signUpController!.emailAsUsername = true;
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews();
-        
-        // stretch background image to fill screen
-        backgroundImage.frame = CGRectMake( 0,  0,  self.logInView!.frame.width,  self.logInView!.frame.height);
-        
-        //position logo
-        logInView!.logo!.sizeToFit();
-        let logoFrame = logInView!.logo!.frame;
-        logInView!.logo!.frame = CGRectMake(logoFrame.origin.x, logInView!.usernameField!.frame.origin.y - logoFrame.height - 16, logInView!.frame.width,  logoFrame.height);
-        
-        //animate
-        viewsFinalYPosition = [CGFloat]();
-        for viewToAnimate in viewsToAnimate {
-            let currentFrame = viewToAnimate.frame;
-            viewsFinalYPosition.append(currentFrame.origin.y);
-            viewToAnimate.frame = CGRectMake(currentFrame.origin.x, self.view.frame.height + currentFrame .origin.y, currentFrame.width, currentFrame.height);
+        // Do any additional setup after loading the view.
+        if (PFUser.currentUser() != nil) {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home");
+                self.presentViewController(viewController, animated: true, completion: nil);
+            })
         }
+
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated);
-        if viewsFinalYPosition.count == self.viewsToAnimate.count {
-            UIView.animateWithDuration(1, delay: 0.0, options: .CurveEaseInOut,  animations: { () -> Void in
-                for viewToAnimate in self.viewsToAnimate {
-                    //viewToAnimate.alpha = 1
-                    let currentFrame = viewToAnimate.frame
-                    viewToAnimate.frame = CGRectMake(currentFrame.origin.x, self.viewsFinalYPosition.removeAtIndex(0), currentFrame.width, currentFrame.height)
-                    }
-                }, completion: nil)
-        }
-        self.signUpController = SignUpViewController();
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning();
+        // Dispose of any resources that can be recreated.
     }
     
-    func customizeButton(button: UIButton!){
-        button.setBackgroundImage(nil, forState: .Normal);
-        button.backgroundColor = UIColor.clearColor();
-        button.layer.cornerRadius = 10;
-        button.layer.borderColor = UIColor.whiteColor().CGColor;
-        button.layer.borderWidth = 1
+    
+    @IBAction func fbLogin(sender: AnyObject) {
+        print("facebook facebook facebook");
+        
     }
+    
+    @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        
+    }
+    
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
     
 }
