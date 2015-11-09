@@ -28,6 +28,8 @@
 		EC1B14241BE27906006182FC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14211BE27906006182FC /* FBSDKCoreKit.framework */; };
 		EC1B14251BE27906006182FC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14221BE27906006182FC /* FBSDKLoginKit.framework */; };
 		EC1B14261BE27906006182FC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14231BE27906006182FC /* FBSDKShareKit.framework */; };
+		ECA5C2231BEC198400007C9C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5C2221BEC198400007C9C /* QuizViewController.swift */; };
+		ECA5C2251BEC205300007C9C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */; };
 		ECCE4F191BE9310300D24B9F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCE4F181BE9310300D24B9F /* ParseUI.framework */; };
 		ECCE4F1E1BE94E2700D24B9F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4F1D1BE94E2700D24B9F /* HomeViewController.swift */; };
 		ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF118DF1BDEC1440035427C /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 		EC1B14221BE27906006182FC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		EC1B14231BE27906006182FC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		EC530AA61BDEC25600D16124 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		ECA5C2221BEC198400007C9C /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		ECCE4F181BE9310300D24B9F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		ECCE4F1C1BE9420F00D24B9F /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		ECCE4F1D1BE94E2700D24B9F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		ECD1136C1BDEC16700C265C8 /* Support files */ = {
 			isa = PBXGroup;
 			children = (
+				ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */,
 				EC42AFB31BDED25800A5CFF4 /* FacebookSDK */,
 				ECF118E61BDEC1440035427C /* Assets.xcassets */,
 				ECF118E81BDEC1440035427C /* LaunchScreen.storyboard */,
@@ -168,6 +173,7 @@
 				ECCE4F1D1BE94E2700D24B9F /* HomeViewController.swift */,
 				EC0D0D4B1BEA687C000A9E08 /* SignUpViewController.swift */,
 				ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */,
+				ECA5C2221BEC198400007C9C /* QuizViewController.swift */,
 				ECF118E31BDEC1440035427C /* Main.storyboard */,
 				ECD1136C1BDEC16700C265C8 /* Support files */,
 			);
@@ -249,6 +255,8 @@
 				ECCE4F1E1BE94E2700D24B9F /* HomeViewController.swift in Sources */,
 				EC0D0D4C1BEA687C000A9E08 /* SignUpViewController.swift in Sources */,
 				ECF118E21BDEC1440035427C /* LoginViewController.swift in Sources */,
+				ECA5C2251BEC205300007C9C /* CustomTableViewCell.swift in Sources */,
+				ECA5C2231BEC198400007C9C /* QuizViewController.swift in Sources */,
 				ECF3BEB71BDEC94700B8B263 /* ResetPasswordViewController.swift in Sources */,
 				ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */,
 			);

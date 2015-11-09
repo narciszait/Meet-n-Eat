@@ -3,9 +3,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Pacifico.ttf">
+            <string>Pacifico</string>
             <string>Pacifico</string>
             <string>Pacifico</string>
             <string>Pacifico</string>
@@ -163,7 +165,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6LR-sR-mdI">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6LR-sR-mdI">
                                         <rect key="frame" x="13" y="80" width="245" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -354,7 +356,7 @@
                                             <constraint firstAttribute="height" constant="30" id="qGF-N3-m59"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDa-jo-dbL">
                                         <rect key="frame" x="13" y="183" width="245" height="30"/>
@@ -363,7 +365,7 @@
                                             <constraint firstAttribute="width" constant="245" id="rcL-HH-i0p"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SQG-uv-rS1">
                                         <rect key="frame" x="13" y="133" width="245" height="30"/>
@@ -373,7 +375,7 @@
                                             <constraint firstAttribute="height" constant="30" id="kVV-lW-w2N"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xu-gc-vY2">
                                         <rect key="frame" x="85" y="286" width="100" height="45"/>
@@ -502,6 +504,113 @@
                 <exit id="yeN-On-u3v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1293" y="-467"/>
+        </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="A84-Zu-zsv">
+            <objects>
+                <viewController storyboardIdentifier="Quiz" id="fb6-Bp-dPF" customClass="QuizViewController" customModule="Meet__n__Eat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4av-o6-JlV"/>
+                        <viewControllerLayoutGuide type="bottom" id="V4v-s4-hxe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TRY-5t-UqI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_5" translatesAutoresizingMaskIntoConstraints="NO" id="8oT-6s-XBi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-8q-v64">
+                                <rect key="frame" x="30" y="30" width="540" height="560"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTx-lm-o0h">
+                                        <rect key="frame" x="219" y="507" width="102" height="45"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUp:" destination="Jvr-CP-7vB" eventType="touchUpInside" id="UiY-H7-BJw"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet 'n' Eat" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQa-t2-E8u">
+                                        <rect key="frame" x="192" y="13" width="156" height="58"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="T7F-gJ-wur"/>
+                                            <constraint firstAttribute="width" constant="156" id="rKi-3D-8xi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="29"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfS-Dg-gRH">
+                                        <rect key="frame" x="18" y="79" width="509" height="420"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textCell" textLabel="7HT-iK-dgn" style="IBUITableViewCellStyleDefault" id="oos-E6-9mL">
+                                                <rect key="frame" x="0.0" y="28" width="509" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oos-E6-9mL" id="0Rb-bG-2iV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="509" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7HT-iK-dgn">
+                                                            <rect key="frame" x="15" y="0.0" width="479" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <animations/>
+                                                </tableViewCellContentView>
+                                                <animations/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="KTx-lm-o0h" firstAttribute="centerX" secondItem="exZ-8q-v64" secondAttribute="centerX" id="69c-Mx-8at"/>
+                                    <constraint firstItem="tfS-Dg-gRH" firstAttribute="leading" secondItem="exZ-8q-v64" secondAttribute="leading" constant="18" id="6C3-l3-wjy"/>
+                                    <constraint firstItem="MQa-t2-E8u" firstAttribute="top" secondItem="exZ-8q-v64" secondAttribute="top" constant="13" id="7Dg-lv-UxX"/>
+                                    <constraint firstItem="KTx-lm-o0h" firstAttribute="bottom" secondItem="exZ-8q-v64" secondAttribute="bottomMargin" id="KEK-NB-mlg"/>
+                                    <constraint firstItem="KTx-lm-o0h" firstAttribute="centerX" secondItem="MQa-t2-E8u" secondAttribute="centerX" id="aVZ-Qh-AVb"/>
+                                    <constraint firstAttribute="trailing" secondItem="tfS-Dg-gRH" secondAttribute="trailing" constant="13" id="eje-81-hHS"/>
+                                    <constraint firstItem="KTx-lm-o0h" firstAttribute="top" secondItem="tfS-Dg-gRH" secondAttribute="bottom" constant="8" symbolic="YES" id="o4y-rU-Ac9"/>
+                                    <constraint firstItem="tfS-Dg-gRH" firstAttribute="top" secondItem="MQa-t2-E8u" secondAttribute="bottom" constant="8" symbolic="YES" id="p6L-X0-iG6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8oT-6s-XBi" firstAttribute="top" secondItem="TRY-5t-UqI" secondAttribute="top" id="0yR-79-85w"/>
+                            <constraint firstItem="8oT-6s-XBi" firstAttribute="bottom" secondItem="V4v-s4-hxe" secondAttribute="top" id="11R-89-Maw"/>
+                            <constraint firstItem="V4v-s4-hxe" firstAttribute="top" secondItem="exZ-8q-v64" secondAttribute="bottom" constant="10" id="6gx-k7-gS0"/>
+                            <constraint firstAttribute="trailing" secondItem="8oT-6s-XBi" secondAttribute="trailing" id="ANS-ek-Q1Y"/>
+                            <constraint firstItem="exZ-8q-v64" firstAttribute="centerX" secondItem="8oT-6s-XBi" secondAttribute="centerX" id="BKJ-jX-rzF"/>
+                            <constraint firstItem="8oT-6s-XBi" firstAttribute="leading" secondItem="TRY-5t-UqI" secondAttribute="leading" id="PUh-u1-G2f"/>
+                            <constraint firstItem="exZ-8q-v64" firstAttribute="leading" secondItem="TRY-5t-UqI" secondAttribute="leadingMargin" constant="10" id="dmg-1j-skG"/>
+                            <constraint firstItem="exZ-8q-v64" firstAttribute="top" secondItem="4av-o6-JlV" secondAttribute="bottom" constant="10" id="f2P-jb-TYc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="tfS-Dg-gRH" id="dpW-lf-IVg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Beg-v8-Ke4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1949" y="-463"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="VAS-ui-y1B">
