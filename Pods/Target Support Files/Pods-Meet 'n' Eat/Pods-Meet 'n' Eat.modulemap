@@ -1,0 +1,6 @@
+framework module Pods_Meet__n__Eat {
+  umbrella header "Pods-Meet 'n' Eat-umbrella.h"
+
+  export *
+  module * { export * }
+}

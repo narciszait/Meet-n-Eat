@@ -38,9 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions);
         application.statusBarStyle = .LightContent;
         
-//        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil);
-//        application.registerUserNotificationSettings(settings);
-//        application.registerForRemoteNotifications();
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil);
+        application.registerUserNotificationSettings(settings);
+        application.registerForRemoteNotifications();
         
         // Register for Push Notitications
         if application.applicationState != UIApplicationState.Background {
@@ -58,12 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
             }
         }
-        if application.respondsToSelector("registerUserNotificationSettings:") {
-            //let userNotificationTypes: UIUserNotificationSettings = [.Alert, .Badge, .Sound];
-            let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil);
-            application.registerUserNotificationSettings(settings);
-            application.registerForRemoteNotifications();
-        }
+//        if application.respondsToSelector("registerUserNotificationSettings:") {
+//            //let userNotificationTypes: UIUserNotificationSettings = [.Alert, .Badge, .Sound];
+//            let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil);
+//            application.registerUserNotificationSettings(settings);
+//            application.registerForRemoteNotifications();
+//        }
 //        } else {
 ////            let types: UIRemoteNotificationType = UIRemoteNotificationType()
 //            let types = [UIRemoteNotificationType.Badge, UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound];

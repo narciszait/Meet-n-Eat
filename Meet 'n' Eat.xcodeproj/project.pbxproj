@@ -40,9 +40,12 @@
 		ECF118E71BDEC1440035427C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF118E61BDEC1440035427C /* Assets.xcassets */; };
 		ECF118EA1BDEC1440035427C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF118E81BDEC1440035427C /* LaunchScreen.storyboard */; };
 		ECF3BEB71BDEC94700B8B263 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */; };
+		FE45F175A2B49EDE9EDE74BD /* Pods_Meet__n__Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F166B71534596951A33D9FA0 /* Pods_Meet__n__Eat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E9287B1B5331D9742931455 /* Pods-Meet 'n' Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meet 'n' Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meet 'n' Eat/Pods-Meet 'n' Eat.release.xcconfig"; sourceTree = "<group>"; };
+		AB3497A5845F327C155548D0 /* Pods-Meet 'n' Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meet 'n' Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meet 'n' Eat/Pods-Meet 'n' Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		EC0D0D4B1BEA687C000A9E08 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EC1B14011BE266EE006182FC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		EC1B14031BE266F5006182FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -79,6 +82,7 @@
 		ECF118E91BDEC1440035427C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECF118EB1BDEC1440035427C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		F166B71534596951A33D9FA0 /* Pods_Meet__n__Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meet__n__Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +110,30 @@
 				EC1B14061BE26701006182FC /* CFNetwork.framework in Frameworks */,
 				EC1B14041BE266F5006182FC /* AudioToolbox.framework in Frameworks */,
 				EC1B14021BE266EE006182FC /* Accounts.framework in Frameworks */,
+				FE45F175A2B49EDE9EDE74BD /* Pods_Meet__n__Eat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D91863DB87383781684ADBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F166B71534596951A33D9FA0 /* Pods_Meet__n__Eat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E86179860EEC5207D395336A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB3497A5845F327C155548D0 /* Pods-Meet 'n' Eat.debug.xcconfig */,
+				6E9287B1B5331D9742931455 /* Pods-Meet 'n' Eat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EC42AFB31BDED25800A5CFF4 /* FacebookSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +181,8 @@
 			children = (
 				ECF118DE1BDEC1440035427C /* Meet 'n' Eat */,
 				ECF118DD1BDEC1440035427C /* Products */,
+				E86179860EEC5207D395336A /* Pods */,
+				0D91863DB87383781684ADBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECF118EE1BDEC1440035427C /* Build configuration list for PBXNativeTarget "Meet 'n' Eat" */;
 			buildPhases = (
+				870D9CCD4A95393AC434B14A /* Check Pods Manifest.lock */,
 				ECF118D81BDEC1440035427C /* Sources */,
 				ECF118D91BDEC1440035427C /* Frameworks */,
 				ECF118DA1BDEC1440035427C /* Resources */,
+				60ACFCE10F47F341638F1693 /* Embed Pods Frameworks */,
+				3F5A679512D1EA4E6FF10921 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +285,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F5A679512D1EA4E6FF10921 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meet 'n' Eat/Pods-Meet 'n' Eat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60ACFCE10F47F341638F1693 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meet 'n' Eat/Pods-Meet 'n' Eat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		870D9CCD4A95393AC434B14A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ECF118D81BDEC1440035427C /* Sources */ = {
@@ -385,6 +460,7 @@
 		};
 		ECF118EF1BDEC1440035427C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB3497A5845F327C155548D0 /* Pods-Meet 'n' Eat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -414,6 +490,7 @@
 		};
 		ECF118F01BDEC1440035427C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E9287B1B5331D9742931455 /* Pods-Meet 'n' Eat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
