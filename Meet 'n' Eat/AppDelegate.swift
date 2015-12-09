@@ -32,11 +32,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
        // let isFacebookAuthorized = application.canOpenURL(NSURL(fileURLWithPath: "fbauth://authorize"));
         Parse.setApplicationId("gTcnz8TitnGTLPRhEmKc9LdLNucARollwYNmFqXw", clientKey: "96obICPl32RPIc5LJJcEkBySpTup6mT87BzvVlt6");
+        
+        
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions);
         application.statusBarStyle = .LightContent;
+        
+//        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil);
+//        application.registerUserNotificationSettings(settings);
+//        application.registerForRemoteNotifications();
+        
+        // Register for Push Notitications
+        if application.applicationState != UIApplicationState.Background {
+            // Track an app open here if we launch with a push, unless
+            // "content_available" was used to trigger a background push (introduced in iOS 7).
+            // In that case, we skip tracking here to avoid double counting the app-open.
+            
+            let preBackgroundPush = !application.respondsToSelector("backgroundRefreshStatus");
+            let oldPushHandlerOnly = !self.respondsToSelector("application:didReceiveRemoteNotification:fetchCompletionHandler:");
+            var pushPayload = false;
+            if let options = launchOptions {
+                pushPayload = options[UIApplicationLaunchOptionsRemoteNotificationKey] != nil;
+            }
+            if (preBackgroundPush || oldPushHandlerOnly || pushPayload) {
+                PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
+            }
+        }
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            //let userNotificationTypes: UIUserNotificationSettings = [.Alert, .Badge, .Sound];
+            let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil);
+            application.registerUserNotificationSettings(settings);
+            application.registerForRemoteNotifications();
+        }
+//        } else {
+////            let types: UIRemoteNotificationType = UIRemoteNotificationType()
+//            let types = [UIRemoteNotificationType.Badge, UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound];
+//            application.registerForRemoteNotificationTypes(types)
+//        }
 
         return true // FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions) //
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let currentInstallation: PFInstallation = PFInstallation.currentInstallation();
+        currentInstallation.setDeviceTokenFromData(deviceToken);
+        //currentInstallation.channels = ["global"];
+        currentInstallation.saveInBackground();
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        if error.code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.");
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error);
+        }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo);
+        if application.applicationState == UIApplicationState.Inactive {
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo);
+        }
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {

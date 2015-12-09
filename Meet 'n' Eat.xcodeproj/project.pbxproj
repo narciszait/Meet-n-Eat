@@ -28,6 +28,8 @@
 		EC1B14241BE27906006182FC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14211BE27906006182FC /* FBSDKCoreKit.framework */; };
 		EC1B14251BE27906006182FC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14221BE27906006182FC /* FBSDKLoginKit.framework */; };
 		EC1B14261BE27906006182FC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14231BE27906006182FC /* FBSDKShareKit.framework */; };
+		EC1C1D0A1BF2A5D00031EBA9 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1D091BF2A5D00031EBA9 /* Reachability.swift */; };
+		EC2CBDA01C186705002FB282 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2CBD9F1C186705002FB282 /* EmergencyViewController.swift */; };
 		ECA5C2231BEC198400007C9C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5C2221BEC198400007C9C /* QuizViewController.swift */; };
 		ECA5C2251BEC205300007C9C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */; };
 		ECCE4F191BE9310300D24B9F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCE4F181BE9310300D24B9F /* ParseUI.framework */; };
@@ -61,6 +63,8 @@
 		EC1B14211BE27906006182FC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		EC1B14221BE27906006182FC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		EC1B14231BE27906006182FC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		EC1C1D091BF2A5D00031EBA9 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		EC2CBD9F1C186705002FB282 /* EmergencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
 		EC530AA61BDEC25600D16124 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		ECA5C2221BEC198400007C9C /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		ECD1136C1BDEC16700C265C8 /* Support files */ = {
 			isa = PBXGroup;
 			children = (
+				EC1C1D091BF2A5D00031EBA9 /* Reachability.swift */,
 				ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */,
 				EC42AFB31BDED25800A5CFF4 /* FacebookSDK */,
 				ECF118E61BDEC1440035427C /* Assets.xcassets */,
@@ -174,6 +179,7 @@
 				EC0D0D4B1BEA687C000A9E08 /* SignUpViewController.swift */,
 				ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */,
 				ECA5C2221BEC198400007C9C /* QuizViewController.swift */,
+				EC2CBD9F1C186705002FB282 /* EmergencyViewController.swift */,
 				ECF118E31BDEC1440035427C /* Main.storyboard */,
 				ECD1136C1BDEC16700C265C8 /* Support files */,
 			);
@@ -212,6 +218,12 @@
 				TargetAttributes = {
 					ECF118DB1BDEC1440035427C = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = C5N5BYSRY5;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -257,7 +269,9 @@
 				ECF118E21BDEC1440035427C /* LoginViewController.swift in Sources */,
 				ECA5C2251BEC205300007C9C /* CustomTableViewCell.swift in Sources */,
 				ECA5C2231BEC198400007C9C /* QuizViewController.swift in Sources */,
+				EC2CBDA01C186705002FB282 /* EmergencyViewController.swift in Sources */,
 				ECF3BEB71BDEC94700B8B263 /* ResetPasswordViewController.swift in Sources */,
+				EC1C1D0A1BF2A5D00031EBA9 /* Reachability.swift in Sources */,
 				ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +387,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
@@ -390,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.narcis.Meet--n--Eat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meet 'n' Eat/Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -399,6 +416,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
@@ -416,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.narcis.Meet--n--Eat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meet 'n' Eat/Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};

@@ -14,11 +14,20 @@ import Parse
 import ParseFacebookUtilsV4
 import ParseUI
 
-class ResetPasswordViewController: UIViewController {
+class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var emailField: UITextField!;
+    var currentResponder: AnyObject?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.emailField.delegate = self;
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: "resignOnTap:");
+        singleTap.numberOfTapsRequired = 1;
+        singleTap.numberOfTouchesRequired = 1;
+        self.view.addGestureRecognizer(singleTap);
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,15 +35,30 @@ class ResetPasswordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    @IBAction func passwordReset(sender: AnyObject){
+        let email = self.emailField.text;
+        let finalEmail = email!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet());
+        PFUser.requestPasswordResetForEmailInBackground(finalEmail);
+        
+        let alert = UIAlertController(title: "Password Reset", message: "An email containing the password has been send", preferredStyle: .Alert);
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil));
+        self.presentViewController(alert, animated: true, completion: nil);
     }
-    */
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField == self.emailField) {
+            self.emailField.resignFirstResponder();
+        }
+        return true;
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.currentResponder = textField;
+    }
+    
+    func resignOnTap(sender: AnyObject){
+        self.currentResponder?.resignFirstResponder();
+    }
+
     
 }

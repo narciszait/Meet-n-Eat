@@ -34,6 +34,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.view.addGestureRecognizer(singleTap);
         
         print("self.view.x: \(self.view.frame.origin.x)");
+        
+        self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.width / 2;
+        self.profilePhoto.clipsToBounds = true;
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -164,7 +167,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             newUser.email = email;
             newUser.password = password;
             newUser.setObject(imageFile!, forKey: "ProfilePic");
-            newUser.setObject("1", forKey: "Hobbies");
+            newUser.setObject([], forKey: "Hobbies");
             newUser.saveInBackground();
             
             
@@ -178,7 +181,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                     let alert = UIAlertView(title: "Error", message: "\(error?.localizedDescription)", delegate: self, cancelButtonTitle: "OK");
                     alert.show();
                 } else {
-                    let alert = UIAlertView(title: "Success", message: "Signed up", delegate: self, cancelButtonTitle: "OK");
+                    let alert = UIAlertView(title: "Quiz time", message: "On to quiz", delegate: self, cancelButtonTitle: "Go!");
                     alert.show();
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Quiz");
