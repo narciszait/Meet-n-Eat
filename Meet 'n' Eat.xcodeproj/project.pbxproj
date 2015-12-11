@@ -30,6 +30,9 @@
 		EC1B14261BE27906006182FC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14231BE27906006182FC /* FBSDKShareKit.framework */; };
 		EC1C1D0A1BF2A5D00031EBA9 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1D091BF2A5D00031EBA9 /* Reachability.swift */; };
 		EC2CBDA01C186705002FB282 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2CBD9F1C186705002FB282 /* EmergencyViewController.swift */; };
+		EC3A60321C1A0A3800EC1AA6 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A60311C1A0A3800EC1AA6 /* MatchesViewController.swift */; };
+		EC3A60341C1A21F100EC1AA6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A60331C1A21F100EC1AA6 /* ChatViewController.swift */; };
+		EC3A60381C1A405000EC1AA6 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A60371C1A405000EC1AA6 /* ChatTableViewCell.swift */; };
 		ECA5C2231BEC198400007C9C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5C2221BEC198400007C9C /* QuizViewController.swift */; };
 		ECA5C2251BEC205300007C9C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */; };
 		ECCE4F191BE9310300D24B9F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCE4F181BE9310300D24B9F /* ParseUI.framework */; };
@@ -40,6 +43,8 @@
 		ECF118E71BDEC1440035427C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF118E61BDEC1440035427C /* Assets.xcassets */; };
 		ECF118EA1BDEC1440035427C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF118E81BDEC1440035427C /* LaunchScreen.storyboard */; };
 		ECF3BEB71BDEC94700B8B263 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */; };
+		ECF5A5FD1C18E841009E257D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF5A5FC1C18E841009E257D /* ProfileViewController.swift */; };
+		ECF5A6011C191335009E257D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF5A6001C191335009E257D /* CollectionViewCell.swift */; };
 		FE45F175A2B49EDE9EDE74BD /* Pods_Meet__n__Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F166B71534596951A33D9FA0 /* Pods_Meet__n__Eat.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +73,9 @@
 		EC1B14231BE27906006182FC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		EC1C1D091BF2A5D00031EBA9 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EC2CBD9F1C186705002FB282 /* EmergencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
+		EC3A60311C1A0A3800EC1AA6 /* MatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		EC3A60331C1A21F100EC1AA6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		EC3A60371C1A405000EC1AA6 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		EC530AA61BDEC25600D16124 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		ECA5C2221BEC198400007C9C /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +90,8 @@
 		ECF118E91BDEC1440035427C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECF118EB1BDEC1440035427C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		ECF5A5FC1C18E841009E257D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		ECF5A6001C191335009E257D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F166B71534596951A33D9FA0 /* Pods_Meet__n__Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meet__n__Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,6 +174,7 @@
 		ECD1136C1BDEC16700C265C8 /* Support files */ = {
 			isa = PBXGroup;
 			children = (
+				EC3A60311C1A0A3800EC1AA6 /* MatchesViewController.swift */,
 				EC1C1D091BF2A5D00031EBA9 /* Reachability.swift */,
 				ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */,
 				EC42AFB31BDED25800A5CFF4 /* FacebookSDK */,
@@ -204,6 +215,10 @@
 				ECF3BEB61BDEC94700B8B263 /* ResetPasswordViewController.swift */,
 				ECA5C2221BEC198400007C9C /* QuizViewController.swift */,
 				EC2CBD9F1C186705002FB282 /* EmergencyViewController.swift */,
+				ECF5A5FC1C18E841009E257D /* ProfileViewController.swift */,
+				ECF5A6001C191335009E257D /* CollectionViewCell.swift */,
+				EC3A60331C1A21F100EC1AA6 /* ChatViewController.swift */,
+				EC3A60371C1A405000EC1AA6 /* ChatTableViewCell.swift */,
 				ECF118E31BDEC1440035427C /* Main.storyboard */,
 				ECD1136C1BDEC16700C265C8 /* Support files */,
 			);
@@ -341,13 +356,18 @@
 			files = (
 				ECCE4F1E1BE94E2700D24B9F /* HomeViewController.swift in Sources */,
 				EC0D0D4C1BEA687C000A9E08 /* SignUpViewController.swift in Sources */,
+				ECF5A5FD1C18E841009E257D /* ProfileViewController.swift in Sources */,
 				ECF118E21BDEC1440035427C /* LoginViewController.swift in Sources */,
 				ECA5C2251BEC205300007C9C /* CustomTableViewCell.swift in Sources */,
 				ECA5C2231BEC198400007C9C /* QuizViewController.swift in Sources */,
+				EC3A60321C1A0A3800EC1AA6 /* MatchesViewController.swift in Sources */,
 				EC2CBDA01C186705002FB282 /* EmergencyViewController.swift in Sources */,
 				ECF3BEB71BDEC94700B8B263 /* ResetPasswordViewController.swift in Sources */,
+				EC3A60341C1A21F100EC1AA6 /* ChatViewController.swift in Sources */,
 				EC1C1D0A1BF2A5D00031EBA9 /* Reachability.swift in Sources */,
+				EC3A60381C1A405000EC1AA6 /* ChatTableViewCell.swift in Sources */,
 				ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */,
+				ECF5A6011C191335009E257D /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

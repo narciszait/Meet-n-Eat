@@ -31,7 +31,7 @@ class EmergencyViewController: UIViewController {
         let notification: PFQuery = PFInstallation.query()!;
         notification.whereKey("deviceType", containedIn: ["ios"]);
         
-        PFPush.sendPushMessageToQueryInBackground(notification, withMessage: button.titleLabel!.text!);
+        PFPush.sendPushMessageToQueryInBackground(notification, withMessage: "Hey! Someone wants to meet here:  \(button.titleLabel!.text!) right now!");
     }
 
     /*

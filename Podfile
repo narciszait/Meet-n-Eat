@@ -8,5 +8,6 @@ target 'Meet \'n\' Eat' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
+  pod 'StarWars', '~> 1.0'
 
 end

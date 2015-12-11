@@ -181,7 +181,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                     let alert = UIAlertView(title: "Error", message: "\(error?.localizedDescription)", delegate: self, cancelButtonTitle: "OK");
                     alert.show();
                 } else {
-                    let alert = UIAlertView(title: "Quiz time", message: "On to quiz", delegate: self, cancelButtonTitle: "Go!");
+                    let alert = UIAlertView(title: "Quiz time", message: "We have to ask you a series of question to figure out who you are", delegate: self, cancelButtonTitle: "Go!");
                     alert.show();
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Quiz");

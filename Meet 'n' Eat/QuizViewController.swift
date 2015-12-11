@@ -27,8 +27,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let firstDictionary = ["data" : headerArray];
-//        let secondDictionary = ["data" : questionsArray];
+        
         dataSource = ["header" : headerArray];
         dataSource = ["questions" : questionsArray];
         
@@ -89,10 +88,6 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 3;
     }
     
-//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return self.headerArray[section]
-//    }
-    
     //MARK: TableView custom header for each section to fit the text + adding text
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: UIView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, 30));
@@ -126,20 +121,15 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         let oldSection = lastIndexPath.section;
         let row = indexPath.row;
         let oldRow = lastIndexPath.row;
-//        let newCell = tableView.cellForRowAtIndexPath(indexPath);
-//        let oldCell = tableView.cellForRowAtIndexPath(lastIndexPath);
         
         if (section == oldSection) {
             if (row != oldRow){
-                //                newCell?.accessoryType = .Checkmark
-                //                oldCell?.accessoryType = .None
                 tableView.deselectRowAtIndexPath(lastIndexPath, animated: true);
                 selectedSection[indexPath.section] = indexPath.row
                 print("selected Section1: \(selectedSection[indexPath.section])");
                 lastIndexPath = indexPath;
             }
         } else {
-            //            newCell?.accessoryType = .Checkmark;
             selectedSection[indexPath.section] = indexPath.row
             print("selected Section: \(selectedSection[indexPath.section])");
             lastIndexPath = indexPath;
@@ -153,7 +143,6 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "textCell";
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath);
-//        cell.textLabel?.text = self.dataSource["questions"]![indexPath.row];
         switch (indexPath.section) {
         case 0:
             cell.textLabel?.text = self.questionsArray[indexPath.row];
@@ -174,16 +163,10 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.textLabel?.numberOfLines = 0;
         cell.textLabel?.lineBreakMode = .ByWordWrapping
         cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0);
-//        cell.thumbnaiImageView.image = UIImage(named: self.imageArray[indexPath.row])
         cell.textLabel?.textColor = UIColor.grayColor();
         
         return cell;
 
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: the continue button
@@ -217,37 +200,5 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
                     }
                 }
         });
-
-//        let newUser = PFUser.currentUser()!;
-//        newUser.setObject(self.selectedSection, forKey: "Hobbies");
-////        newUser.saveInBackground();
-//        newUser.saveInBackgroundWithBlock { (success, error) -> Void in
-//            print("in the save in background");
-//            print("\(self.reachability.isReachableViaWiFi()) wifi");
-//            
-//            self.spinner.stopAnimating();
-//            self.container.removeFromSuperview();
-//            
-////            self.reachability.whenReachable = { reachability in
-////                dispatch_async(dispatch_get_main_queue()) {
-////                    if self.reachability.isReachableViaWWAN() {
-////                        self.spinner.stopAnimating();
-////                        self.container.removeFromSuperview();
-////                    }
-////                }
-////            };
-//            
-//            if ((error) != nil){
-//                let alert = UIAlertView(title: "Error", message: "\(error?.localizedDescription)", delegate: self, cancelButtonTitle: "OK");
-//                alert.show();
-//            } else {
-//                let alert = UIAlertView(title: "Success", message: "Signed up", delegate: self, cancelButtonTitle: "OK");
-//                alert.show();
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home");
-//                    self.presentViewController(viewController, animated: true, completion: nil);
-//                });
-//            }
-//        }
     }
 }

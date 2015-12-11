@@ -11,54 +11,26 @@ import UIKit
 import Parse
 import ParseUI
 
-class HomeViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class HomeViewController: UIViewController, UIPopoverPresentationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var profilePhoto: UIImageView!
+    var users = [PFObject]();
+    @IBOutlet weak var collectionView: UICollectionView!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.profilePhoto.clipsToBounds = true;
-        self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.width / 2;
+        self.collectionView.dataSource = self;
+        self.collectionView.delegate = self;
+//        
+//        let cellWidth = ((UIScreen.mainScreen().bounds.width) - 32 - 30) / 3;
+//        let cellLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout;
+//        cellLayout.itemSize = CGSize(width: cellWidth, height: cellWidth);
         
-        
-        if let pUserName = PFUser.currentUser()?["username"] as? String {
-            self.userNameLabel.text = "@" + pUserName;
-        }
-        
-        let userImageFile = PFUser.currentUser()?["ProfilePic"] as! PFFile
-        userImageFile.getDataInBackgroundWithBlock { (imageData, error) -> Void in
-            if (error != nil) {
-                let alert = UIAlertView(title: "Error", message: "\(error?.localizedDescription)", delegate: self, cancelButtonTitle: "OK");
-                alert.show();
-            } else {
-                let image = UIImage(data: imageData!);
-                self.profilePhoto.image = image;
-            }
-        }
+        self.loadCollectionViewData();
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-//    override func viewWillAppear(animated: Bool) {
-//
-//    }
     
     @IBAction func emergencyButton(sender: AnyObject) {
         print("emergency");
-    }
-    
-    @IBAction func logOutAction(sender: AnyObject){
-        PFUser.logOut();
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login");
-            self.presentViewController(viewController, animated: true, completion: nil);
-        });
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -66,8 +38,7 @@ class HomeViewController: UIViewController, UIPopoverPresentationControllerDeleg
             let emergencyViewController = segue.destinationViewController as! EmergencyViewController;
             emergencyViewController.modalPresentationStyle = UIModalPresentationStyle.Popover;
             emergencyViewController.popoverPresentationController!.delegate = self;
-            emergencyViewController.popoverPresentationController?.sourceRect = CGRectMake(125
-                , 30, 0, 0);
+            emergencyViewController.popoverPresentationController?.sourceRect = CGRectMake(85, 43, 0, 0);
             emergencyViewController.popoverPresentationController?.permittedArrowDirections = [.Up];
         }
     }
@@ -76,4 +47,70 @@ class HomeViewController: UIViewController, UIPopoverPresentationControllerDeleg
         return UIModalPresentationStyle.None;
     }
     
+    //MARK: fetch users from Parse
+    func loadCollectionViewData(){
+        let query = PFUser.query();
+        query!.whereKey("username", notEqualTo: PFUser.currentUser()!.username!);
+        do {
+            try users = query!.findObjects()
+        } catch {
+            print(error)
+        }
+        
+        print("users count: \(users.count)");
+//        print(users[0]["username"]);
+        
+        self.collectionView.reloadData();
+    }
+    
+    //MARK: CollectionView stuff
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1;
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return users.count;
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell;
+        
+        if let name = users[indexPath.row]["username"] as? String{
+            cell.cellTitle.text = name;
+        }
+
+        if let value = users[indexPath.row]["ProfilePic"] as? PFFile {
+            let image = users[indexPath.row]["ProfilePic"] as? PFFile
+            image!.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil) {
+                    if let imageData = imageData{
+                        cell.cellImage.image = UIImage(data: imageData);
+                    }
+                }
+            });
+        }
+        cell.matchLabel.text = "\(self.checkMatches(indexPath.row))";
+        
+        cell.cellImage.layer.cornerRadius = cell.cellImage.frame.size.width / 2;
+        cell.cellImage.clipsToBounds = true;
+        
+        
+        
+        return cell
+    }
+    
+    func checkMatches(index: Int) -> Int{
+        var currentUserHobbies: [Int] = PFUser.currentUser()!["Hobbies"] as![Int];
+        var serverUserHobbies: [Int] = users[index]["Hobbies"] as! [Int];
+        var index = 0;
+        
+        for i in 0...5 {
+            if (currentUserHobbies[i] == serverUserHobbies[i]){
+                index++;
+            }
+        }
+        
+        print("matches: \(index)");
+        return index;
+    }
 }
