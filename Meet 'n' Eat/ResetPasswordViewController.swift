@@ -14,7 +14,8 @@ import Parse
 import ParseFacebookUtilsV4
 import ParseUI
 
-class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
+
+class ResetPasswordViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var emailField: UITextField!;
     var currentResponder: AnyObject?;
@@ -59,6 +60,15 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     func resignOnTap(sender: AnyObject){
         self.currentResponder?.resignFirstResponder();
     }
+    
+    @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        let destination = unwindSegue.destinationViewController
+        destination.transitioningDelegate = self
+        print("unwind");
+    }
 
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return StarWarsGLAnimator()
+    }
     
 }

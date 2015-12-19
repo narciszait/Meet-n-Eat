@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0961921C207D1B00700148 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0961911C207D1B00700148 /* TestViewController.swift */; };
 		EC0D0D481BEA3BE4000A9E08 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECCE4F1C1BE9420F00D24B9F /* Pacifico.ttf */; };
 		EC0D0D4C1BEA687C000A9E08 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0D0D4B1BEA687C000A9E08 /* SignUpViewController.swift */; };
 		EC1B14021BE266EE006182FC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B14011BE266EE006182FC /* Accounts.framework */; };
@@ -33,6 +34,15 @@
 		EC3A60321C1A0A3800EC1AA6 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A60311C1A0A3800EC1AA6 /* MatchesViewController.swift */; };
 		EC3A60341C1A21F100EC1AA6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A60331C1A21F100EC1AA6 /* ChatViewController.swift */; };
 		EC3A60381C1A405000EC1AA6 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A60371C1A405000EC1AA6 /* ChatTableViewCell.swift */; };
+		EC74DB281C1A6C220002C5AA /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74DB1F1C1A6C220002C5AA /* Sprite.swift */; };
+		EC74DB291C1A6C220002C5AA /* SpriteRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74DB201C1A6C220002C5AA /* SpriteRender.swift */; };
+		EC74DB2A1C1A6C220002C5AA /* StarWarsGLAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74DB211C1A6C220002C5AA /* StarWarsGLAnimator.swift */; };
+		EC74DB2B1C1A6C220002C5AA /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74DB221C1A6C220002C5AA /* Vector2.swift */; };
+		EC74DB2C1C1A6C220002C5AA /* ViewTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74DB231C1A6C220002C5AA /* ViewTexture.swift */; };
+		EC74DB2D1C1A6C220002C5AA /* StarWarsUIDynamicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74DB251C1A6C220002C5AA /* StarWarsUIDynamicAnimator.swift */; };
+		EC74DB2E1C1A6C220002C5AA /* StarWarsUIViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74DB271C1A6C220002C5AA /* StarWarsUIViewAnimator.swift */; };
+		EC8664121C1A7C0400E6D021 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8664111C1A7C0400E6D021 /* UIDevice.swift */; };
+		EC8664141C1B2C4500E6D021 /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8664131C1B2C4500E6D021 /* LunchViewController.swift */; };
 		ECA5C2231BEC198400007C9C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5C2221BEC198400007C9C /* QuizViewController.swift */; };
 		ECA5C2251BEC205300007C9C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */; };
 		ECCE4F191BE9310300D24B9F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCE4F181BE9310300D24B9F /* ParseUI.framework */; };
@@ -51,6 +61,7 @@
 /* Begin PBXFileReference section */
 		6E9287B1B5331D9742931455 /* Pods-Meet 'n' Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meet 'n' Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meet 'n' Eat/Pods-Meet 'n' Eat.release.xcconfig"; sourceTree = "<group>"; };
 		AB3497A5845F327C155548D0 /* Pods-Meet 'n' Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meet 'n' Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meet 'n' Eat/Pods-Meet 'n' Eat.debug.xcconfig"; sourceTree = "<group>"; };
+		EC0961911C207D1B00700148 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		EC0D0D4B1BEA687C000A9E08 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EC1B14011BE266EE006182FC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		EC1B14031BE266F5006182FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -77,6 +88,16 @@
 		EC3A60331C1A21F100EC1AA6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		EC3A60371C1A405000EC1AA6 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		EC530AA61BDEC25600D16124 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		EC74DB1B1C1A6B800002C5AA /* StarWars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StarWars.framework; path = "Pods/../build/Debug-iphoneos/StarWars.framework"; sourceTree = "<group>"; };
+		EC74DB1F1C1A6C220002C5AA /* Sprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
+		EC74DB201C1A6C220002C5AA /* SpriteRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteRender.swift; sourceTree = "<group>"; };
+		EC74DB211C1A6C220002C5AA /* StarWarsGLAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsGLAnimator.swift; sourceTree = "<group>"; };
+		EC74DB221C1A6C220002C5AA /* Vector2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
+		EC74DB231C1A6C220002C5AA /* ViewTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTexture.swift; sourceTree = "<group>"; };
+		EC74DB251C1A6C220002C5AA /* StarWarsUIDynamicAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsUIDynamicAnimator.swift; sourceTree = "<group>"; };
+		EC74DB271C1A6C220002C5AA /* StarWarsUIViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsUIViewAnimator.swift; sourceTree = "<group>"; };
+		EC8664111C1A7C0400E6D021 /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		EC8664131C1B2C4500E6D021 /* LunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
 		ECA5C2221BEC198400007C9C /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		ECCE4F181BE9310300D24B9F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
@@ -130,6 +151,7 @@
 		0D91863DB87383781684ADBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC74DB1B1C1A6B800002C5AA /* StarWars.framework */,
 				F166B71534596951A33D9FA0 /* Pods_Meet__n__Eat.framework */,
 			);
 			name = Frameworks;
@@ -171,9 +193,48 @@
 			name = FacebookSDK;
 			sourceTree = "<group>";
 		};
+		EC74DB1D1C1A6C220002C5AA /* StarWars */ = {
+			isa = PBXGroup;
+			children = (
+				EC74DB1E1C1A6C220002C5AA /* StarWarsGLAnimator */,
+				EC74DB241C1A6C220002C5AA /* StarWarsUIDynamicAnimator */,
+				EC74DB261C1A6C220002C5AA /* StarWarsUIViewAnimator */,
+			);
+			path = StarWars;
+			sourceTree = "<group>";
+		};
+		EC74DB1E1C1A6C220002C5AA /* StarWarsGLAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				EC74DB1F1C1A6C220002C5AA /* Sprite.swift */,
+				EC74DB201C1A6C220002C5AA /* SpriteRender.swift */,
+				EC74DB211C1A6C220002C5AA /* StarWarsGLAnimator.swift */,
+				EC74DB221C1A6C220002C5AA /* Vector2.swift */,
+				EC74DB231C1A6C220002C5AA /* ViewTexture.swift */,
+			);
+			path = StarWarsGLAnimator;
+			sourceTree = "<group>";
+		};
+		EC74DB241C1A6C220002C5AA /* StarWarsUIDynamicAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				EC74DB251C1A6C220002C5AA /* StarWarsUIDynamicAnimator.swift */,
+			);
+			path = StarWarsUIDynamicAnimator;
+			sourceTree = "<group>";
+		};
+		EC74DB261C1A6C220002C5AA /* StarWarsUIViewAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				EC74DB271C1A6C220002C5AA /* StarWarsUIViewAnimator.swift */,
+			);
+			path = StarWarsUIViewAnimator;
+			sourceTree = "<group>";
+		};
 		ECD1136C1BDEC16700C265C8 /* Support files */ = {
 			isa = PBXGroup;
 			children = (
+				EC74DB1D1C1A6C220002C5AA /* StarWars */,
 				EC3A60311C1A0A3800EC1AA6 /* MatchesViewController.swift */,
 				EC1C1D091BF2A5D00031EBA9 /* Reachability.swift */,
 				ECA5C2241BEC205200007C9C /* CustomTableViewCell.swift */,
@@ -219,8 +280,11 @@
 				ECF5A6001C191335009E257D /* CollectionViewCell.swift */,
 				EC3A60331C1A21F100EC1AA6 /* ChatViewController.swift */,
 				EC3A60371C1A405000EC1AA6 /* ChatTableViewCell.swift */,
+				EC8664131C1B2C4500E6D021 /* LunchViewController.swift */,
 				ECF118E31BDEC1440035427C /* Main.storyboard */,
 				ECD1136C1BDEC16700C265C8 /* Support files */,
+				EC8664111C1A7C0400E6D021 /* UIDevice.swift */,
+				EC0961911C207D1B00700148 /* TestViewController.swift */,
 			);
 			path = "Meet 'n' Eat";
 			sourceTree = "<group>";
@@ -358,14 +422,24 @@
 				EC0D0D4C1BEA687C000A9E08 /* SignUpViewController.swift in Sources */,
 				ECF5A5FD1C18E841009E257D /* ProfileViewController.swift in Sources */,
 				ECF118E21BDEC1440035427C /* LoginViewController.swift in Sources */,
+				EC74DB291C1A6C220002C5AA /* SpriteRender.swift in Sources */,
+				EC8664121C1A7C0400E6D021 /* UIDevice.swift in Sources */,
 				ECA5C2251BEC205300007C9C /* CustomTableViewCell.swift in Sources */,
 				ECA5C2231BEC198400007C9C /* QuizViewController.swift in Sources */,
+				EC74DB2B1C1A6C220002C5AA /* Vector2.swift in Sources */,
 				EC3A60321C1A0A3800EC1AA6 /* MatchesViewController.swift in Sources */,
+				EC0961921C207D1B00700148 /* TestViewController.swift in Sources */,
 				EC2CBDA01C186705002FB282 /* EmergencyViewController.swift in Sources */,
+				EC8664141C1B2C4500E6D021 /* LunchViewController.swift in Sources */,
 				ECF3BEB71BDEC94700B8B263 /* ResetPasswordViewController.swift in Sources */,
+				EC74DB2E1C1A6C220002C5AA /* StarWarsUIViewAnimator.swift in Sources */,
+				EC74DB2D1C1A6C220002C5AA /* StarWarsUIDynamicAnimator.swift in Sources */,
 				EC3A60341C1A21F100EC1AA6 /* ChatViewController.swift in Sources */,
+				EC74DB281C1A6C220002C5AA /* Sprite.swift in Sources */,
+				EC74DB2A1C1A6C220002C5AA /* StarWarsGLAnimator.swift in Sources */,
 				EC1C1D0A1BF2A5D00031EBA9 /* Reachability.swift in Sources */,
 				EC3A60381C1A405000EC1AA6 /* ChatTableViewCell.swift in Sources */,
+				EC74DB2C1C1A6C220002C5AA /* ViewTexture.swift in Sources */,
 				ECF118E01BDEC1440035427C /* AppDelegate.swift in Sources */,
 				ECF5A6011C191335009E257D /* CollectionViewCell.swift in Sources */,
 			);
@@ -485,6 +559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
@@ -494,8 +569,9 @@
 					Eat,
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Meet",
-					"'n'",
+					n,
 					Eat,
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Meet 'n' Eat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -515,6 +591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
@@ -524,8 +601,9 @@
 					Eat,
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Meet",
-					"'n'",
+					n,
 					Eat,
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Meet 'n' Eat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

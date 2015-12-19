@@ -15,6 +15,7 @@ import Parse
 import ParseFacebookUtilsV4
 import ParseUI
 
+
 class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
     
     
@@ -75,13 +76,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
     @IBAction func fbLogin(sender: AnyObject) {
         print("facebook facebook facebook");
         
-        if (PFUser.currentUser() != nil) {
-//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home");
-                self.presentViewController(viewController, animated: true, completion: nil);
-//            });
-            
-        } else {
+//        if (PFUser.currentUser() != nil) {
+////            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home");
+//                self.presentViewController(viewController, animated: true, completion: nil);
+////            });
+//            
+//        } else {
         
             PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email"], block: { (user: PFUser?, error:NSError?) -> Void in
             
@@ -108,7 +109,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
                                 facebookUser.setObject(result["name"], forKey: "username");
                                 facebookUser.setObject(result["id"], forKey: "objectId");
                                 facebookUser.setObject(result["email"], forKey: "email");
-                                facebookUser.setObject("1", forKey: "Hobbies");
+                                facebookUser.setObject([], forKey: "Hobbies");
+                                facebookUser.setObject("", forKey: "Lunch");
                                 
                                 let avatarLocationURL = NSURL(string: "https://graph.facebook.com/\(userID)/picture?width=1000&height=1000");
                                 let profilePictureData = NSData(contentsOfURL: avatarLocationURL!);
@@ -131,7 +133,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
                     });
                 }
             });
-        }
+//        }
     }
     
     @IBAction func loginAction(sender: AnyObject){
@@ -242,12 +244,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
             emergencyViewController.popoverPresentationController!.delegate = self;
             emergencyViewController.popoverPresentationController?.sourceRect = CGRectMake(100, 30, 0, 0);
             emergencyViewController.popoverPresentationController?.permittedArrowDirections = [.Up];
+            emergencyViewController.transitioningDelegate = self;
+        } else {
+            let destination = segue.destinationViewController
+            destination.transitioningDelegate = self
+
         }
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.None;
     }
-
     
+}
+
+extension LoginViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animator = StarWarsGLAnimator();
+        animator.duration = 0.75;
+        animator.spriteWidth = 8;
+        return animator; // StarWarsGLAnimator() //
+    }
 }

@@ -16,6 +16,7 @@ class ChatViewController: UIViewController, UIPopoverPresentationControllerDeleg
     @IBOutlet weak var messageField: UITextField!
     var messagesArray: [String] = [String]();
     var authorsArray: [String] = [String]();
+    var model: String?
     @IBOutlet weak var dockViewContraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
@@ -31,19 +32,56 @@ class ChatViewController: UIViewController, UIPopoverPresentationControllerDeleg
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tableViewTapped");
         self.messageTableView.addGestureRecognizer(tapGesture);
         
+        self.messageTableView.reloadData()
+        self.tableViewScrollToBottom(true)
+        self.retrieveMessages();
+        
+        model = UIDevice.currentDevice().modelName;
         
         NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "retrieveMessages", userInfo: nil, repeats: true);
-       self.retrieveMessages();
+        
+        
         
     }
     
+//    -(void)viewWillAppear:(BOOL)animated {
+//    [self.tableView reloadData];
+//    NSIndexPath* ip = [NSIndexPath indexPathForRow:[self.tableView numberOfRowsInSection:0] - 1 inSection:0];
+//    [self.tableView scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionTop animated:NO];
+//    }
+    
+//    override func viewWillAppear(animated: Bool) {
+//        self.messageTableView.reloadData()
+//        self.tableViewScrollToBottom(true)
+//    }
+    
+    func tableViewScrollToBottom(animated: Bool) {
+        
+        let delay = 0.1 * Double(NSEC_PER_SEC);
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay));
+        
+        dispatch_after(time, dispatch_get_main_queue(), {
+            
+            let numberOfSections = self.messageTableView.numberOfSections;
+            let numberOfRows = self.messageTableView.numberOfRowsInSection(numberOfSections-1);
+            
+            if numberOfRows > 0 {
+                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
+                self.messageTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: animated);
+            }
+        });
+    }
     func tableViewTapped(){
         self.messageField.endEditing(true);
     }
     
     //MARK: TextField methods
     func textFieldDidBeginEditing(textField: UITextField) {
-        self.messageTableView.setContentOffset(CGPointMake(0, self.messageTableView.contentSize.height / 2 + 20), animated:true);
+//        if (model == "iPhone 4s") {
+//            self.messageTableView.setContentOffset(CGPointMake(0, self.messageTableView.contentSize.height / 2 + 20), animated:true);
+//        }
+        
+         self.tableViewScrollToBottom(true)
         
         self.view.layoutIfNeeded();
         UIView.animateWithDuration(0.5, animations: {
@@ -94,7 +132,14 @@ class ChatViewController: UIViewController, UIPopoverPresentationControllerDeleg
     func retrieveMessages() {
         let query: PFQuery = PFQuery(className: "Messages");
         query.orderByDescending("createdAt")
-        query.limit = 5;
+        
+        if (model == "iPhone 4s") {
+           query.limit = 5;
+        }
+        if (model == "iPhone 6"){
+            query.limit = 12;
+        }
+        
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error) -> Void in
             //Clear messagesArray
             self.messagesArray = [String]();
@@ -117,6 +162,7 @@ class ChatViewController: UIViewController, UIPopoverPresentationControllerDeleg
             //Reload tableView
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.messageTableView.reloadData();
+                self.tableViewScrollToBottom(true)
                 self.messagesArray = self.messagesArray.reverse();
                 self.authorsArray = self.authorsArray.reverse();
                 dump(self.messagesArray);

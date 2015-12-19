@@ -11,6 +11,7 @@ import UIKit
 import Parse
 import ParseUI
 
+
 class HomeViewController: UIViewController, UIPopoverPresentationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var users = [PFObject]();
@@ -34,13 +35,42 @@ class HomeViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "popoverSegue" {
+        if (segue.identifier == "popoverSegue") {
             let emergencyViewController = segue.destinationViewController as! EmergencyViewController;
             emergencyViewController.modalPresentationStyle = UIModalPresentationStyle.Popover;
             emergencyViewController.popoverPresentationController!.delegate = self;
             emergencyViewController.popoverPresentationController?.sourceRect = CGRectMake(85, 43, 0, 0);
             emergencyViewController.popoverPresentationController?.permittedArrowDirections = [.Up];
+        } else if (segue.identifier == "11-12") {
+            let lunchViewController = segue.destinationViewController as! LunchViewController;
+            lunchViewController.hoursString = segue.identifier;
+            lunchViewController.modalPresentationStyle = UIModalPresentationStyle.Popover;
+            lunchViewController.popoverPresentationController!.delegate = self;
+            lunchViewController.popoverPresentationController?.sourceRect = CGRectMake(0, 29, 0, 0);
+            lunchViewController.popoverPresentationController?.permittedArrowDirections = [.Up];
+        } else if (segue.identifier == "12-13") {
+            let lunchViewController = segue.destinationViewController as! LunchViewController;
+            lunchViewController.hoursString = segue.identifier;
+            lunchViewController.modalPresentationStyle = UIModalPresentationStyle.Popover;
+            lunchViewController.popoverPresentationController!.delegate = self;
+            lunchViewController.popoverPresentationController?.sourceRect = CGRectMake(30, 29, 0, 0);
+            lunchViewController.popoverPresentationController?.permittedArrowDirections = [.Up];
+        } else if (segue.identifier == "13-14") {
+            let lunchViewController = segue.destinationViewController as! LunchViewController;
+            lunchViewController.hoursString = segue.identifier;
+            lunchViewController.modalPresentationStyle = UIModalPresentationStyle.Popover;
+            lunchViewController.popoverPresentationController!.delegate = self;
+            lunchViewController.popoverPresentationController?.sourceRect = CGRectMake(80, 29, 0, 0);
+            lunchViewController.popoverPresentationController?.permittedArrowDirections = [.Up];
         }
+        else {
+            let destination = segue.destinationViewController
+            destination.transitioningDelegate = self
+        }
+    }
+    
+    func prepareForPopoverPresentation(popoverPresentationController: UIPopoverPresentationController){
+        
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -52,9 +82,9 @@ class HomeViewController: UIViewController, UIPopoverPresentationControllerDeleg
         let query = PFUser.query();
         query!.whereKey("username", notEqualTo: PFUser.currentUser()!.username!);
         do {
-            try users = query!.findObjects()
+            try users = query!.findObjects();
         } catch {
-            print(error)
+            print(error);
         }
         
         print("users count: \(users.count)");
@@ -113,4 +143,17 @@ class HomeViewController: UIViewController, UIPopoverPresentationControllerDeleg
         print("matches: \(index)");
         return index;
     }
+    
 }
+
+extension HomeViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animator = StarWarsGLAnimator();
+        animator.duration = 0.5;
+        animator.spriteWidth = 8;
+        return animator; // StarWarsGLAnimator() //
+        
+    }
+}
+

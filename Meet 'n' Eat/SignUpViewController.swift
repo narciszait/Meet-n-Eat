@@ -168,6 +168,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             newUser.password = password;
             newUser.setObject(imageFile!, forKey: "ProfilePic");
             newUser.setObject([], forKey: "Hobbies");
+            newUser.setObject("", forKey: "Lunch");
             newUser.saveInBackground();
             
             
